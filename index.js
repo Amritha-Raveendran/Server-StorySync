@@ -15,7 +15,7 @@ const server = express()
 server.use(cors({
     origin: [
       "http://localhost:5173",       // For local frontend development
-     " https://frontend-story-sync.vercel.app",
+     "'https://frontend-story-sync.vercel.app",
     ],
     
     methods: ["GET", "POST", "PUT", "DELETE"] // Allowed HTTP methods
