@@ -13,13 +13,13 @@ const server = express()
 
 
 server.use(cors({
-    origin: [
-      "http://localhost:5173",       
-     "https://storysync-server.onrender.com",
-    ],
-    
-    methods: ["GET", "POST", "PUT", "DELETE"] 
-  }))
+  origin: [
+    "http://localhost:5173",
+    "https://frontend-story-sync.vercel.app",
+  ],
+
+  methods: ["GET", "POST", "PUT", "DELETE"]
+}))
 
 // middleware
 server.use(express.json())
@@ -29,10 +29,10 @@ server.use(router)
 const PORT = process.env.PORT || 5000
 
 server.listen(PORT, () => {
-    console.log(`Server is running successfully at port number ${PORT}`);
+  console.log(`Server is running successfully at port number ${PORT}`);
 });
 
 
-server.get('/',(req,res)=>{
-    res.send(`get request received`);
+server.get('/', (req, res) => {
+  res.send(`get request received`);
 })
