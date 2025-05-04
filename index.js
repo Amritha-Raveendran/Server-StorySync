@@ -14,11 +14,11 @@ const server = express()
 
 server.use(cors({
     origin: [
-      "http://localhost:5173",       // For local frontend development
-     "'https://frontend-story-sync.vercel.app",
+      "http://localhost:5173",       
+     "https://storysync-server.onrender.com",
     ],
     
-    methods: ["GET", "POST", "PUT", "DELETE"] // Allowed HTTP methods
+    methods: ["GET", "POST", "PUT", "DELETE"] 
   }))
 
 // middleware
