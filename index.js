@@ -4,6 +4,7 @@ const cors = require('cors')
 const router = require('./router')
 
 
+
 // import mongoDB (connection.js file)
 require('./connection')
 
@@ -13,13 +14,12 @@ const server = express()
 
 
 server.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://frontend-story-sync.vercel.app",
-  ],
+  origin:"*",
 
-  methods: ["GET", "POST", "PUT", "DELETE"]
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }))
+server.options('*', cors()) // handle preflight
 
 // middleware
 server.use(express.json())
